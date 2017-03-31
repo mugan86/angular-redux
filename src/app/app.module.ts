@@ -11,6 +11,7 @@ import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { CampaignComponent } from './resources/campaign/campaign.component';
 import { CampaignCountComponent } from './resources/campaign/count.component';
+import { KeyboardEvents } from './resources/keyboard-events/keyboard-events.component';
 
 import { CampaignService } from './_services/campaign.service';
 
@@ -20,7 +21,8 @@ import { campaigns } from './_reducers/campaign.reducer';
   declarations: [
     AppComponent,
     CampaignComponent,
-    CampaignCountComponent
+    CampaignCountComponent,
+    KeyboardEvents
   ],
   imports: [
     BrowserModule,
