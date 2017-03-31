@@ -50,6 +50,11 @@ export class KeyboardEvents {
         alert("Test");
     }
   }
+
+  getKeyboardEventCode()
+  {
+      return this.code;
+  }
 /*
     if (this.code == 'ArrowUp')
     {
