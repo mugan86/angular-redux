@@ -44,4 +44,25 @@ export class CampaignComponent implements OnInit, OnDestroy {
         this.campaignService.loadCampaigns();
     }
 
+    loadStaticCampaigns()
+    {
+        this.campaignService.loadStaticCampaign();
+    }
+
+    addNewTest(name)
+    {
+        console.info(name + "---> " + name + "djsllslkalala");
+    }
+
+    hello()
+    {
+        console.info("Test");
+    }
+
+    removeSelectElement(element)
+    {
+        console.log(element.token);
+        this.campaignService.removeSelectElement(element);
+    }
+
 }

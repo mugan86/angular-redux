@@ -1,7 +1,8 @@
 <h2>List of campaigns</h2>
 <button class="btn btn-primary" (click)="loadNew()">Load New</button>
+<button class="btn btn-primary" (click)="loadStaticCampaigns()">Load Static</button>
 <ol>
     <li *ngFor="let campaign of (campaigns | async)">
-        {{campaign.name}}
+        {{campaign.name}} <button (click)="removeSelectElement(campaign)" class="btn btn-link">X</button>
     </li>
 </ol>

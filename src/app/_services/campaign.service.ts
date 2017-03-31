@@ -27,14 +27,42 @@ export class CampaignService {
     loadCampaigns() {
         return this.http.get(this.campaignUrl)
                         .map((res: Response) => {
+                            console.log(res);
                             let body = res.json();
+                            console.log(body);
                             return body.data || {};
                         })
                         .map((payload: Campaign[]) => {
+                            console.log("Length: " + payload.length);
                             return { type: 'ADD_CAMPAIGNS', payload };
                         })
                         .subscribe((action) => {
+                            console.log(action);
                             this.store.dispatch(action);
                         });
+    }
+
+    loadStaticCampaign()
+    {
+        let campainList : Campaign[];
+        campainList = [
+            {"name": "hfhfhf", "token": "eeeee", "totalBanners": 23, "activeBanners": 24 },
+            {"name": "hdfhfhfhghhfg", "token": "csfffff", "totalBanners": 556, "activeBanners": 12 },
+            {"name": "aaaaaa", "token": "iwiwkwoslls", "totalBanners": 76, "activeBanners": 86 }
+        ];
+
+        let action = {type: "ADD_STATIC", payload: campainList};
+        console.log(action);
+        this.store.dispatch(action);
+    }
+
+    hello()
+    {
+        console.info("Test");
+    }
+
+    removeSelectElement(element)
+    {
+        this.store.dispatch({type: "REMOVE_ELEMENT", payload: [element]})
     }
 }
