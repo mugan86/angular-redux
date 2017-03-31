@@ -4,7 +4,7 @@ export const campaigns = (state: any = [], {type, payload}) => {
             console.log(payload);
             return payload;
         case 'ADD_STATIC':
-            return state.concat(state, payload);
+            return state.concat(payload);
         case 'REMOVE_ELEMENT':
             return state.filter(campaign => {
                 return campaign.token !== payload[0].token;})
